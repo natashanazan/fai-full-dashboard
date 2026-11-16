@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAI Masterlist</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#0e1a33;--mu:#66728b;--bd:#e2e7f1;--nv:#0a2559;--ac:#2557d6;--ok:#15803d;--wip:#c2410c;--ns:#64748b;--od:#dc2626;--hv:#f1f4fb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081124;--card:#0f1c36;--tx:#e8eefc;--mu:#93a1bf;--bd:#1e2d4d;--hv:#142443;--ac:#6b93ff;--ok:#4ade80;--wip:#fb923c;--ns:#94a3b8;--od:#f87171}}
+:root[data-theme="dark"]{--bg:#081124;--card:#0f1c36;--tx:#e8eefc;--mu:#93a1bf;--bd:#1e2d4d;--hv:#142443;--ac:#6b93ff;--ok:#4ade80;--wip:#fb923c;--ns:#94a3b8;--od:#f87171}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 "Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nv);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nv);color:#fff;display:flex;align-items:center;gap:14px;padding:12px 24px}
+header b{font-size:16px;letter-spacing:.2px}header span{opacity:.7;font-size:12px}
+.ib{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:8px;width:36px;height:36px;font-size:18px;cursor:pointer}
+nav{position:fixed;left:0;top:calc(60px + env(safe-area-inset-top,0px));bottom:0;width:220px;background:var(--card);border-right:1px solid var(--bd);padding:16px 12px;transform:translateX(-100%);transition:transform .2s;z-index:25}
+nav.open{transform:none;box-shadow:0 10px 40px rgba(0,0,0,.2)}
+nav a{display:block;padding:9px 12px;border-radius:8px;color:var(--tx);cursor:pointer;font-weight:500}nav a:hover,nav a.on{background:var(--hv);color:var(--ac)}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.hero{background:linear-gradient(135deg,#0a2559,#1a4fc4);color:#fff;border-radius:18px;padding:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;margin-bottom:20px}
+.hero h1{margin:0 0 6px;font-size:34px;letter-spacing:-.8px}.hero p{margin:0 0 22px;opacity:.8;max-width:420px}
+.lg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.lg div{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 14px}.lg b{display:block;font-size:26px;line-height:1.1}.lg small{opacity:.8}
+.dn{position:relative;width:230px;height:230px;margin:auto}.dn svg{transform:rotate(-90deg)}.dn div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.dn b{font-size:40px;line-height:1}.dn small{opacity:.8}
+.g{display:grid;gap:16px;margin-bottom:20px}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:2fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+h2{font-size:16px;margin:0 0 14px}.mu{color:var(--mu)}.big{font-size:28px;font-weight:700;letter-spacing:-.5px;line-height:1.2}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;display:flex}.bar i{display:block;height:100%}
+.pr{display:grid;grid-template-columns:100px 1fr 90px;gap:12px;align-items:center;margin:12px 0}
+table{width:100%;border-collapse:collapse}th{text-align:left;font-weight:600;color:var(--mu);font-size:12px;padding:8px 10px;border-bottom:1px solid var(--bd)}td{padding:10px;border-bottom:1px solid var(--bd);vertical-align:middle}tr.cl{cursor:pointer}tr.cl:hover td{background:var(--hv)}
+.tw{overflow-x:auto}
+.b{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:600;background:var(--hv)}
+.Completed{color:var(--ok)}.WIP,.Pending,.Open{color:var(--wip)}.Not-Started,.NA{color:var(--ns)}.Overdue,.High{color:var(--od)}.Closed{color:var(--ok)}.In-Progress{color:var(--ac)}
+input,select,textarea,button.p{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 10px}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+button.p{background:var(--nv);color:#fff;border-color:var(--nv);cursor:pointer;font-weight:600}button.s{background:var(--card);color:var(--tx);border-color:var(--bd)}
+.tb{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}.tb input{flex:1;min-width:200px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}.top h1{margin:0;font-size:24px;letter-spacing:-.5px}
+.fl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}.fl small{display:block;color:var(--mu)}
+.rd{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}.rd div{background:var(--hv);border-radius:10px;padding:10px 14px}.rd b{font-size:22px;display:block}
+.bl{background:color-mix(in srgb,var(--od) 8%,var(--card));border:1px solid color-mix(in srgb,var(--od) 30%,var(--bd));border-radius:10px;padding:12px 14px;margin-top:12px}.bl li{margin:3px 0}
+.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}.fm input,.fm select{width:100%}
+#md{position:fixed;inset:0;background:rgba(5,12,30,.5);display:none;place-items:center;z-index:40;padding:16px}#md.on{display:grid}#md .card{width:min(460px,100%);display:grid;gap:10px}
+.back{cursor:pointer;color:var(--ac);font-weight:600;margin-bottom:12px;display:inline-block}
+@media(max-width:860px){.hero,.g2,.g3,.g4,.rd{grid-template-columns:1fr 1fr}.hero,.g2{grid-template-columns:1fr}main{padding:14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header><button class="ib" onclick="nv.classList.toggle('open')" aria-label="Menu">☰</button><div><b>FAI Masterlist</b><br><span>First Article Inspection Monitoring, Readiness &amp; Action Tracking Portal</span></div></header>
+<nav id="nv"><a onclick="go('dash')" id="n1">Dashboard</a><a onclick="go('reg')" id="n2">FAI Register</a></nav>
+<main id="app"></main><div id="md"><div class="card" id="mc"></div></div>
+<script>
+const T=new Date('2026-11-16'),DOCS=['Job Card','Work Instruction','Drawing','COC','Form 1 Supplier','FAIR Package','Check Sheet','Bubbled Drawing','PO','COS','Baseline FAIR','Net Inspect'],
+DP={'Job Card':'Engineering','Work Instruction':'Engineering','Drawing':'Engineering','COC':'Supplier','Form 1 Supplier':'Supplier','FAIR Package':'Quality','Check Sheet':'Production','Bubbled Drawing':'Quality','PO':'Procurement','COS':'Supplier','Baseline FAIR':'Quality','Net Inspect':'Quality'},
+PICS=['Engineering','Supplier','Quality','Production','Procurement','Planning'],PROG=['A320 CA','A320 MA','A350','A321 XLR'];
+const e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fd=d=>d?new Date(d).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/ /g,'-'):'–';
+const iso=n=>new Date(T.getTime()+n*864e5).toISOString().slice(0,10);
+let sd=11;const rn=()=>(sd=(sd*9301+49297)%233280)/233280;
+const rem=(d,p)=>p=='Supplier'?'Awaiting supplier submission':'Being prepared by '+p;
+let D=[];
+for(let i=0;i<38;i++){const r=rn(),ty=i%9==0?'SCR':i%4==0?'SCN':'ICN',dis=i%11==5&&ty!='SCR',base=dis?'WIP':r<.3?'Completed':r<.78?'WIP':'Not Started',docs={};
+ DOCS.forEach((n,k)=>{let s='pending';if(rn()<.2&&k>5)s='na';else if(base=='Completed')s='done';else if(base=='WIP'&&rn()<.55)s='done';docs[n]={s,pic:DP[n],rem:s=='pending'?rem(n,DP[n]):''}});
+ if(base=='WIP'&&!Object.values(docs).some(d=>d.s=='pending')){docs['COC'].s='pending';docs['COC'].rem=rem(0,'Supplier')}
+ if(base=='Not Started')Object.values(docs).forEach(d=>{if(d.s=='done')d.s='pending'});
+ const o={id:i,no:'FAI-2026-'+(1001+i*7),prog:PROG[[0,0,1,1,2,0,1,3][i%8]],ty,base,ecd:iso(base=='Completed'?-Math.floor(5+rn()*50):Math.floor(-18+rn()*70)),flag:base!='Completed'&&rn()<.18,docs,acts:[],cust:dis?'Disapproved':base=='Completed'?'Approved':'Pending',ds:null,rm:''};
+ if(base!='Completed'&&i%3==0)o.acts.push({t:'Update Job Card',to:'Engineering',pic:'Engineering',due:'2026-11-20',st:'Open',rm:''});
+ if(dis)o.ds={ref:'DS-2026-00'+(5+i%4),desc:'Dimensional nonconformance noted on customer review',pic:'Quality',due:iso(12),cl:'Open',acts:[{t:'Review Findings',d:true},{t:'Update FAIR Package',d:false},{t:'Submit Evidence',d:false}]};
+ D.push(o)}
+const op=()=>D.filter(r=>r.ty!='SCR'),dn=r=>Object.values(r.docs).filter(d=>d.s=='done').length,rq=r=>Object.values(r.docs).filter(d=>d.s!='na').length,pd=r=>DOCS.filter(n=>r.docs[n].s=='pending'),pg=r=>rq(r)?Math.round(dn(r)/rq(r)*100):0;
+const st=r=>r.base=='Completed'?'Completed':new Date(r.ecd)<T?'Overdue':r.base,cls=s=>s.replace(' ','-');
+const oa=r=>r.acts.filter(a=>a.st!='Closed'),od=r=>r.ds&&r.ds.cl!='Closed'?r.ds.acts.filter(a=>!a.d):[];
+const hi=r=>r.flag||st(r)=='Overdue';
+const bk=r=>[...pd(r).map(n=>`${n} – pending with ${r.docs[n].pic}`),...oa(r).map(a=>`Action: ${a.t} (${a.to}, due ${fd(a.due)})`),...od(r).map(a=>`Defect sheet ${r.ds.ref}: ${a.t}`)];
+const bd=s=>`<span class="b ${cls(s)}">${s}</span>`;
+let S={page:'dash',id:null,q:'',fp:'',ft:'',fs:'',per:10,pg:1};
+const $=id=>document.getElementById(id);
+function go(p,id){S.page=p;S.id=id??null;nv.classList.remove('open');R();scrollTo(0,0)}
+function R(){$('n1').className=S.page=='dash'?'on':'';$('n2').className=S.page!='dash'?'on':'';$('app').innerHTML=S.page=='dash'?dash():S.page=='reg'?reg():det();if(S.page=='reg')rb()}
+function dash(){const o=op(),c=k=>o.filter(r=>r.base==k).length,C=c('Completed'),W=c('WIP'),N=c('Not Started'),n=o.length,rate=Math.round(C/n*100),R_=70,L=2*Math.PI*R_;
+ let off=0;const seg=(v,col)=>{const l=v/n*L,s=`<circle r="${R_}" cx="100" cy="100" fill="none" stroke="${col}" stroke-width="22" stroke-dasharray="${l} ${L-l}" stroke-dashoffset="${-off}"/>`;off+=l;return s};
+ const scr=D.filter(r=>r.ty=='SCR'),ov=o.filter(r=>st(r)=='Overdue').length,dsa=D.reduce((a,r)=>a+od(r).length,0),dsn=D.filter(r=>r.ds&&r.ds.cl!='Closed').length;
+ const pri=D.filter(r=>r.ty!='SCR'&&st(r)!='Completed'&&hi(r)).sort((a,b)=>(b.flag-a.flag)||(st(b)=='Overdue')-(st(a)=='Overdue')||a.ecd.localeCompare(b.ecd));
+ return `<section class="hero"><div><h1>FAI Masterlist</h1><p>See why each FAI is open, what is pending and who owns it.</p><div class="lg"><div><b>${n}</b><small>Total FAI</small></div><div><b>${C}</b><small>Completed</small></div><div><b>${W}</b><small>Work In Progress</small></div><div><b>${N}</b><small>Not Started</small></div></div></div>
+ <div class="dn"><svg width="230" height="230" viewBox="0 0 200 200"><circle r="70" cx="100" cy="100" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="22"/>${seg(C,'#4ade80')}${seg(W,'#fbbf24')}${seg(N,'#94a3b8')}</svg><div><b>${rate}%</b><small>completed</small></div></div></section>
+ <div class="g g4"><div class="card"><small class="mu">Operational FAI completion rate</small><div class="big">${rate}%</div></div><div class="card"><small class="mu">Total active FAI</small><div class="big">${W+N}</div></div><div class="card"><small class="mu">Current WIP FAI</small><div class="big">${W}</div></div><div class="card"><small class="mu">Overdue / past ECD</small><div class="big" style="color:var(--od)">${ov}</div></div></div>
+ <div class="g g2"><div class="card"><h2>Programme performance</h2>${PROG.slice(0,3).map(p=>{const x=o.filter(r=>r.prog==p),a=x.filter(r=>r.base=='Completed').length,w=x.filter(r=>r.base=='WIP').length,m=x.length||1;return `<div class="pr"><b>${p}</b><div class="bar"><i style="width:${a/m*100}%;background:var(--ok)"></i><i style="width:${w/m*100}%;background:#f59e0b"></i><i style="width:${(x.length-a-w)/m*100}%;background:var(--ns)"></i></div><span class="mu">${x.length} FAI · ${Math.round(a/m*100)}%</span></div>`}).join('')}<small class="mu">Overdue FAI are counted in WIP / Not Started.</small></div>
+ <div class="g" style="margin:0"><div class="card"><h2>SCR Pipeline</h2><div class="big">${scr.length}</div><small class="mu">Pipeline only. Not included in operational FAI. An SCR may later become an SCN.</small></div><div class="card"><h2>Customer defect sheets</h2><div class="big">${dsa}</div><small class="mu">open actions across ${dsn} disapproved FAI</small></div></div></div>
+ <div class="card"><h2>Priority FAI</h2><div class="tw"><table><tr><th>FAI Number</th><th>Programme</th><th>Type</th><th>Status</th><th>Progress</th><th>ECD</th></tr>${pri.map(r=>`<tr class="cl" onclick="go('det',${r.id})"><td><b>${r.no}</b></td><td>${r.prog}</td><td>${r.ty}</td><td>${bd(st(r))}</td><td>${pg(r)}%</td><td>${fd(r.ecd)}</td></tr>`).join('')||'<tr><td colspan=6 class="mu">No priority FAI.</td></tr>'}</table></div></div>`}
+function reg(){return `<div class="top"><h1>FAI Register</h1><button class="p" onclick="nf()">New FAI</button></div><div class="card"><div class="tb"><input id="q" placeholder="Search FAI number" value="${e(S.q)}" oninput="S.q=this.value;S.pg=1;rb()">
+ <select onchange="S.fp=this.value;S.pg=1;rb()"><option value="">All programmes</option>${PROG.map(p=>`<option ${S.fp==p?'selected':''}>${p}</option>`).join('')}</select>
+ <select onchange="S.ft=this.value;S.pg=1;rb()"><option value="">All types</option>${['ICN','SCN','SCR'].map(p=>`<option ${S.ft==p?'selected':''}>${p}</option>`).join('')}</select>
+ <select onchange="S.fs=this.value;S.pg=1;rb()"><option value="">All statuses</option>${['Completed','WIP','Not Started','Overdue'].map(p=>`<option ${S.fs==p?'selected':''}>${p}</option>`).join('')}</select></div><div id="rb"></div></div>`}
+function rb(){let l=D.filter(r=>(!S.q||r.no.toLowerCase().includes(S.q.toLowerCase()))&&(!S.fp||r.prog==S.fp)&&(!S.ft||r.ty==S.ft)&&(!S.fs||st(r)==S.fs)),pc=Math.max(1,Math.ceil(l.length/S.per));S.pg=Math.min(S.pg,pc);const v=l.slice((S.pg-1)*S.per,S.pg*S.per);
+ $('rb').innerHTML=`<div class="tw"><table><tr><th>FAI Number</th><th>Programme</th><th>Type</th><th>Status</th><th>ECD</th><th>Priority</th></tr>${v.map(r=>`<tr class="cl" onclick="go('det',${r.id})"><td><b>${r.no}</b></td><td>${r.prog}</td><td>${r.ty}</td><td>${bd(st(r))}</td><td>${fd(r.ecd)}</td><td>${st(r)!='Completed'&&hi(r)?bd('High'):'Normal'}</td></tr>`).join('')||'<tr><td colspan=6 class="mu">No FAI match these filters.</td></tr>'}</table></div>
+ <div class="tb" style="margin:14px 0 0;justify-content:space-between"><span class="mu">${l.length} FAI · Rows per page <select onchange="S.per=+this.value;S.pg=1;rb()">${[10,20,50,100].map(n=>`<option ${S.per==n?'selected':''}>${n}</option>`).join('')}</select></span><span><button class="p s" ${S.pg<2?'disabled':''} onclick="S.pg--;rb()">Previous</button> Page ${S.pg} of ${pc} <button class="p s" ${S.pg>=pc?'disabled':''} onclick="S.pg++;rb()">Next</button></span></div>`}
+function sync(r){if(r.base=='Completed'&&pd(r).length)r.base=dn(r)?'WIP':'Not Started';else if(!pd(r).length&&rq(r)&&!oa(r).length)r.base='Completed';else if(r.base!='Completed')r.base=dn(r)?'WIP':'Not Started'}
+function sd_(i,k,v){const r=D[S.id];r.docs[DOCS[i]][k]=v;if(k=='s'&&v!='pending')r.docs[DOCS[i]].rem='';if(k=='s'&&v=='pending'&&!r.docs[DOCS[i]].rem)r.docs[DOCS[i]].rem=rem(0,r.docs[DOCS[i]].pic);sync(r);R()}
+function det(){const r=D[S.id],b=bk(r),p=pd(r).sort(),ord=[...DOCS.map((n,i)=>i)].sort((a,c)=>(r.docs[DOCS[c]].s=='pending')-(r.docs[DOCS[a]].s=='pending'));
+ return `<span class="back" onclick="go('reg')">← FAI Register</span><div class="top"><h1>${r.no}</h1><button class="p s" onclick="if(confirm('Are you sure you want to delete this FAI?')){D.splice(S.id,1);D.forEach((x,i)=>x.id=i);go('reg')}">Delete</button></div>
+ <div class="card" style="margin-bottom:16px"><div class="fl"><div><small>Programme</small><b>${r.prog}</b></div><div><small>Type</small><b>${r.ty}</b></div><div><small>Status</small>${bd(st(r))}</div><div><small>ECD</small><input type="date" value="${r.ecd}" onchange="D[S.id].ecd=this.value;R()"></div><div><small>Priority</small><label><input type="checkbox" ${r.flag?'checked':''} onchange="D[S.id].flag=this.checked;R()"> Flag as priority</label></div><div><small>Customer outcome</small><select onchange="D[S.id].cust=this.value;if(this.value=='Disapproved'&&!D[S.id].ds)D[S.id].ds={ref:'',desc:'',pic:'Quality',due:'',cl:'Open',acts:[]};R()">${['Pending','Approved','Disapproved'].map(x=>`<option ${r.cust==x?'selected':''}>${x}</option>`).join('')}</select></div></div></div>
+ <div class="card" style="margin-bottom:16px"><h2>Document readiness</h2><div class="bar"><i style="width:${pg(r)}%;background:var(--ok)"></i></div><div class="rd"><div><b>${rq(r)}</b>Required</div><div><b>${dn(r)}</b>Completed</div><div><b>${p.length}</b>Pending</div><div><b style="color:${b.length?'var(--od)':'var(--ok)'}">${b.length}</b>Closure blockers</div></div>
+ ${b.length?`<div class="bl"><b>Why this FAI is still open</b><ul style="margin:6px 0 0;padding-left:18px">${b.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div>`:'<div class="bl" style="background:var(--hv);border-color:var(--bd)"><b>Nothing is blocking closure.</b></div>'}
+ <div class="tw" style="margin-top:14px"><table><tr><th>Document</th><th>Status</th><th>Responsible PIC</th><th>Remarks</th></tr>${ord.map(i=>{const d=r.docs[DOCS[i]];return `<tr><td><b>${DOCS[i]}</b></td><td><select onchange="sd_(${i},'s',this.value)"><option value="done" ${d.s=='done'?'selected':''}>Completed</option><option value="pending" ${d.s=='pending'?'selected':''}>Pending</option><option value="na" ${d.s=='na'?'selected':''}>N/A</option></select></td><td><select onchange="sd_(${i},'pic',this.value)">${PICS.map(x=>`<option ${d.pic==x?'selected':''}>${x}</option>`).join('')}</select></td><td><input style="width:100%;min-width:200px" value="${e(d.rem)}" ${d.s!='pending'?'disabled':''} onchange="sd_(${i},'rem',this.value)"></td></tr>`}).join('')}</table></div></div>
+ <div class="card" style="margin-bottom:16px"><h2>Action tracker</h2><div class="tw"><table><tr><th>Task</th><th>Assigned to</th><th>Due</th><th>Status</th><th>Remarks</th><th></th></tr>${r.acts.map((a,i)=>`<tr><td><b>${e(a.t)}</b></td><td>${e(a.to)}</td><td><input type="date" value="${a.due}" onchange="D[S.id].acts[${i}].due=this.value;R()"></td><td><select onchange="D[S.id].acts[${i}].st=this.value;sync(D[S.id]);R()">${['Open','In Progress','Closed'].map(x=>`<option ${a.st==x?'selected':''}>${x}</option>`).join('')}</select></td><td><input value="${e(a.rm)}" onchange="D[S.id].acts[${i}].rm=this.value"></td><td>${a.st!='Closed'?`<button class="p" onclick="D[S.id].acts[${i}].st='Closed';sync(D[S.id]);R()">Close</button>`:''}</td></tr>`).join('')||'<tr><td colspan=6 class="mu">No actions yet. Create one below.</td></tr>'}</table></div>
+ <div class="fm"><input id="at" placeholder="Task"><select id="ao">${PICS.map(x=>`<option>${x}</option>`).join('')}</select><input id="ad" type="date"><input id="ar" placeholder="Remarks"><button class="p" onclick="addA()">Create action</button></div></div>
+ ${r.cust=='Disapproved'&&r.ds?ds(r):''}`}
+function ds(r){const d=r.ds;return `<div class="card"><h2>Customer defect sheet</h2><div class="fm" style="margin:0 0 12px"><input placeholder="Defect sheet reference" value="${e(d.ref)}" onchange="D[S.id].ds.ref=this.value"><input placeholder="Defect description" value="${e(d.desc)}" onchange="D[S.id].ds.desc=this.value"><select onchange="D[S.id].ds.pic=this.value">${PICS.map(x=>`<option ${d.pic==x?'selected':''}>${x}</option>`).join('')}</select><input type="date" value="${d.due}" onchange="D[S.id].ds.due=this.value"><select onchange="D[S.id].ds.cl=this.value;R()">${['Open','Closed'].map(x=>`<option ${d.cl==x?'selected':''}>${x}</option>`).join('')}</select></div>
+ ${d.acts.map((a,i)=>`<label style="display:block;margin:4px 0"><input type="checkbox" ${a.d?'checked':''} onchange="D[S.id].ds.acts[${i}].d=this.checked;R()"> Corrective action: ${e(a.t)}</label>`).join('')}
+ <div class="fm"><input id="dc" placeholder="New corrective action"><button class="p s" onclick="if(dc.value){D[S.id].ds.acts.push({t:dc.value,d:false});R()}">Add corrective action</button></div></div>`}
+function addA(){if(!at.value)return at.focus();const r=D[S.id];r.acts.push({t:at.value,to:ao.value,pic:ao.value,due:ad.value,st:'Open',rm:ar.value});sync(r);R()}
+function nf(){$('mc').innerHTML=`<h2>New FAI</h2><input id="nn" placeholder="FAI number"><select id="np">${PROG.map(x=>`<option>${x}</option>`).join('')}</select><select id="nt"><option>ICN</option><option>SCN</option><option>SCR</option></select><input id="ne" type="date"><button class="p" onclick="sv()">Save FAI</button><button class="p s" onclick="$('md').classList.remove('on')">Cancel</button>`;$('md').classList.add('on')}
+function sv(){if(!nn.value||!ne.value)return alert('Enter an FAI number and an ECD.');const docs={};DOCS.forEach(n=>docs[n]={s:'pending',pic:DP[n],rem:rem(0,DP[n])});D.unshift({id:0,no:nn.value,prog:np.value,ty:nt.value,base:'Not Started',ecd:ne.value,flag:false,docs,acts:[],cust:'Pending',ds:null,rm:''});D.forEach((x,i)=>x.id=i);$('md').classList.remove('on');go('reg')}
+R();
+</script></body></html>
